@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+
+# Build output
+dist/
+build/
+.next/
+out/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Local generated assets
+tmp/
+generated_images/
+*.log
+
