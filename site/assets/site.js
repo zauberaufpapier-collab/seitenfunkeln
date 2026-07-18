@@ -51,7 +51,7 @@ function showToast(message) {
 document.querySelectorAll("[data-affiliate-placeholder]").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
-    showToast("Vor dem Livegang wird hier dein persönlicher Digistore24-Affiliate-Link eingesetzt.");
+    showToast("Der persönliche Digistore24-Affiliate-Link wird hier in Kürze freigeschaltet.");
   });
 });
 

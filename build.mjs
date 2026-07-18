@@ -67,12 +67,12 @@ function pageShell({ title, description, current, content, image = "assets/image
     + '<meta name="theme-color" content="#791844"><meta property="og:type" content="' + type + '">'
     + '<meta property="og:title" content="' + esc(fullTitle) + '"><meta property="og:description" content="' + esc(description) + '">'
     + '<meta property="og:image" content="' + image + '"><meta name="twitter:card" content="summary_large_image">'
-    + '<link rel="stylesheet" href="assets/styles.css?v=6">' + schema + '</head>'
+    + '<link rel="stylesheet" href="assets/styles.css?v=7">' + schema + '</head>'
     + '<body><a class="skip-link" href="#inhalt">Zum Inhalt springen</a>'
     + '<div class="disclosure-bar">Seitenfunkeln ist ein unabhängiger Empfehlungsblog. Werbliche Inhalte und Affiliate-Links sind als Anzeige gekennzeichnet.</div>'
     + header(current) + '<main id="inhalt">' + content + '</main>' + footer()
     + '<div class="toast" role="status" aria-live="polite" data-toast></div>'
-    + '<script src="assets/site.js?v=6" defer></script></body></html>';
+    + '<script src="assets/site.js?v=7" defer></script></body></html>';
 }
 
 function articleCard(article, featured = false) {
@@ -93,6 +93,14 @@ function courseLink(label = "Kapitel 2 kennenlernen", className = "button button
 function affiliateButton(label = "Kapitel 2 beim Anbieter ansehen") {
   return '<a class="button button-gold" href="' + site.affiliateUrl + '" target="_blank" rel="sponsored nofollow noopener"'
     + (site.affiliatePlaceholder ? ' data-affiliate-placeholder="true"' : '') + '>' + label + ' ' + arrow + '</a>';
+}
+
+function digistoreTrust() {
+  return '<div class="digistore-trust" aria-label="Hinweis zur Bestellung über Digistore24">'
+    + '<span class="digistore-trust-check" aria-hidden="true">&#10003;</span><div>'
+    + '<span>Bestellung &amp; Zahlungsabwicklung</span><strong>über Digistore24</strong>'
+    + '<p>Der Affiliate-Link führt dich zur offiziellen Verkaufsseite. Kursdetails und den aktuell gültigen Preis prüfst du dort vor deiner Bestellung.</p>'
+    + '</div></div>';
 }
 
 function externalLinkNotice() {
@@ -204,7 +212,7 @@ function coursePage() {
   const content = '<article class="course-page"><header class="course-hero"><div><a class="back-link light" href="blog.html">&larr; Zum Blog</a>'
     + '<span class="eyebrow">Anzeige · unabhängige Affiliate-Empfehlung</span><h1>' + course.title + '</h1><p>' + course.description + '</p>'
     + '<div class="button-row">' + affiliateButton() + '<a class="button button-ghost" href="#einschaetzung">Erst in Ruhe lesen</a></div>'
-    + '<small>Bei einem Kauf über meinen Affiliate-Link erhalte ich eine Provision; für dich entstehen keine Mehrkosten. <a href="haftung-downloads.html#externe-links">Hinweise zu externen Links</a></small></div>'
+    + '<small>Bestellung und Zahlungsabwicklung über Digistore24. Bei einem Kauf über meinen Affiliate-Link erhalte ich eine Provision; für dich entstehen keine Mehrkosten. <a href="haftung-downloads.html#externe-links">Hinweise zu externen Links</a></small></div>'
     + '<img src="' + course.image + '" alt="' + course.imageAlt + '"></header>'
     + '<section class="verdict" id="einschaetzung"><div><span class="eyebrow">Mein ehrlicher Blick</span><h2>Was mich an Kapitel 2 überzeugt und berührt hat.</h2></div>'
     + '<div><p>Ich habe Kapitel 2 als einen liebevollen Einstieg für Anfängerinnen und Anfänger erlebt, die mit KI eigene Bücher erschaffen und Amazon KDP verständlich kennenlernen möchten.</p>'
@@ -226,7 +234,8 @@ function coursePage() {
     + '<p>Meine Empfehlung ist unabhängig und basiert auf meiner persönlichen Erfahrung mit Kapitel 2.</p>'
     + '<p>Meine Erfahrung ist persönlich und kein Versprechen für bestimmte Ergebnisse oder Einnahmen. Dein Weg hängt davon ab, was du daraus machst, wie sorgfältig du arbeitest und wie konsequent du umsetzt.</p>'
     + '<p>Wenn du über meinen Link teilnimmst, erhalte ich eine Affiliate-Provision. Dein Preis bleibt dadurch gleich – und meine Empfehlung bleibt von Herzen.</p></section>'
-    + '<section class="final-cta"><span class="eyebrow">Deine Entscheidung darf sich gut anfühlen</span><h2>Schau in Ruhe, ob Kapitel 2 zu dir und deinem Weg passt.</h2><p>Auf der offiziellen Verkaufsseite des Anbieters findest du die aktuell gültigen Kursinhalte, Konditionen und alle Informationen für deine eigene Entscheidung.</p>'
+    + '<section class="section digistore-section" id="bestellung">' + digistoreTrust() + '</section>'
+    + '<section class="final-cta"><span class="eyebrow">Deine Entscheidung darf sich gut anfühlen</span><h2>Schau in Ruhe, ob Kapitel 2 zu dir und deinem Weg passt.</h2><p>Auf der offiziellen Verkaufsseite findest du die aktuell gültigen Kursinhalte, Konditionen und alle Informationen für deine eigene Entscheidung.</p>'
     + affiliateButton("Zur offiziellen Verkaufsseite") + externalLinkNotice() + '</section></article>';
   return pageShell({ title: course.title, description: course.description, current: "", content, image: course.image, type: "article" });
 }

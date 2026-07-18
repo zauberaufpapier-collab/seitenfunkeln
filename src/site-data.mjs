@@ -6,7 +6,8 @@ export const site = {
   preLaunch: false,
   email: "zauberaufpapier@gmail.com",
   freebieUrl: "assets/downloads/seitenfunkeln-starterpaket.pdf",
-  affiliateUrl: "https://www.digistore24.com/redir/DEINE_AFFILIATE_ID/KAPITEL2/",
+  // Replace this with the personal Digistore24 promolink before activation.
+  affiliateUrl: "#affiliate-link-folgt",
   affiliatePlaceholder: true,
   legalName: "Nicole Feller",
   legalCareOf: "c/o SourceArt",
