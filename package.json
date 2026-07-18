@@ -1,0 +1,12 @@
+{
+  "name": "seitenfunkeln-kdp-affiliate-blog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pinterest-orientierter Affiliate-Blog für Kapitel 2, KI-Bücher und Amazon KDP.",
+  "scripts": {
+    "build": "node build.mjs",
+    "freebie": "python generate-freebie.py",
+    "preview": "python -m http.server 4177 --directory site"
+  }
+}

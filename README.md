@@ -1,34 +1,81 @@
-# Kapitel 2 KDP Affiliate Blog
+# Seitenfunkeln
 
-Eigenes Repository fuer den Pinterest-Blog rund um KI-Buecher, Amazon KDP und die Affiliate-Vermarktung von Kapitel 2.
+Professioneller Pinterest- und Affiliate-Blog für Anfängerinnen und Anfänger, die mit KI eigene
+Buchideen entwickeln und Amazon KDP verständlich kennenlernen möchten.
 
-## Ziel
+## Was bereits fertig ist
 
-Dieses Projekt sammelt die Blogstrategie, Artikelentwuerfe, Pinterest-Ideen und CTA-Bausteine fuer einen eigenstaendigen Affiliate-Blog. Der Blog soll Anfaengerinnen und Anfaenger ehrlich und einfach in das Thema KI-Buecher mit Amazon KDP einfuehren und Kapitel 2 als passenden naechsten Schritt empfehlen.
+- responsive Startseite mit klarer Pinterest-Einstiegslogik
+- sechs ausführliche Mehrwertartikel
+- transparente Empfehlungsseite für den Kurs Kapitel 2
+- kostenloses 16-seitiges Starterpaket mit 12 KI-Prompts und 4 Vorlagen
+- Ressourcen-, Über-uns-, Kontakt- und Transparenzseiten
+- ausgefülltes Impressum und an Cloudflare Workers angepasste Datenschutzerklärung
+- eigene optimierte Webbilder
+- mobile Navigation, SEO-Metadaten und strukturierte Artikeldaten
+- 404-Seite und Vorveröffentlichungs-Sperre für Suchmaschinen
 
-## Struktur
+Der gebaute Blog liegt im Ordner site/. Die Strategie- und Textgrundlagen
+bleiben zusätzlich unter docs/ erhalten.
 
-- `docs/00_Blog_Masterplan.md` - Positionierung, Zielgruppe, Funnel und Compliance
-- `docs/01_Startseite_und_Navigation.md` - Startseite, Navigation und zentrale Empfehlungsseite
-- `docs/02_Redaktionsplan_12_Artikel.md` - Redaktionsplan mit 12 Startartikeln
-- `docs/03_...` bis `docs/05_...` - erste ausgearbeitete Blogartikel
-- `docs/06_CTA_Disclosure_Pinterest_Bausteine.md` - CTAs, Affiliate-Hinweise und Pinterest-Bausteine
-- `docs/07_Artikelentwurf_Kapitel2_Erfahrung.md` - zentrale Kurs-Empfehlungsseite
-- `docs/08_Pinterest_Pin_Matrix.md` - Pin-Winkel und Pin-Beschreibungen
+## Lokal öffnen
 
-## Grundhaltung
+site/index.html kann direkt im Browser geöffnet werden.
 
-Der Blog arbeitet bewusst nicht mit "schnell reich"-Versprechen. Die Positionierung ist:
+Für eine lokale Vorschau über einen Webserver:
 
-> KDP mit KI kann ein spannender Einstieg sein, wenn Idee, Nische, Qualitaet, Rechte und Umsetzung ernst genommen werden.
+```powershell
+python -m http.server 4177 --directory site
+```
 
-Kapitel 2 wird als einfacher, anfaengerfreundlicher Kurs mit Community, Support und klarer Schritt-fuer-Schritt-Struktur empfohlen.
+Danach ist der Blog unter http://127.0.0.1:4177 erreichbar.
 
-## Naechste Schritte
+## Neu bauen
 
-1. Website-Stack festlegen.
-2. Blogdesign und Seitenstruktur bauen.
-3. Erste Artikel als echte Seiten umsetzen.
-4. Pinterest-Grafikset erstellen.
-5. Affiliate-Link und rechtliche Pflichtseiten einbauen.
+```powershell
+node build.mjs
+```
 
+Der Build erzeugt alle HTML-Seiten neu und kopiert die optimierten Assets nach
+site/.
+
+Das kostenlose PDF kann nach Textänderungen separat neu erzeugt werden:
+
+```powershell
+python generate-freebie.py
+```
+
+## Noch zu ergänzen
+
+Alle persönlichen Angaben stehen zentral in src/site-data.mjs:
+
+1. persönlicher Digistore24-Affiliate-Link
+2. affiliatePlaceholder nach Einsetzen des Links auf false setzen
+3. vor einem Wechsel des Hostings oder dem Einbau externer Dienste die Datenschutzerklärung aktualisieren
+
+Das Starterpaket bleibt ein reiner Direktdownload. Die Website enthält dafür
+keine Newsletter-Anmeldung, kein E-Mail-Feld und keinen automatischen Verteiler.
+
+Das Impressum enthält die bereitgestellten Betreiberangaben. Die Datenschutzerklärung
+bildet den aktuellen Stand mit Cloudflare Workers, lokalem PDF-Download, Gmail-Kontakt und
+reinen externen Digistore24-Links ab. Änderungen an diesen Diensten erfordern vor ihrem
+Einsatz eine erneute Prüfung und Anpassung.
+
+## Veröffentlichung über Cloudflare Workers
+
+Das Repository dient als Quellcode-Speicher. Die gebaute Website wird aus dem Ordner
+`site/` über Cloudflare Workers Static Assets veröffentlicht. Die Konfiguration liegt in
+`wrangler.jsonc`; der Bereitstellungsbefehl lautet `npx wrangler deploy`.
+
+## Gestaltung
+
+- Dunkelhimbeer: #791844
+- tiefes Himbeer: #4b0c2e
+- warmes Gold: #d0a15d
+- Altrosa: #cc7187
+- Salbeigrün: #587166
+
+Die Bildsprache ist warm, weich und verträumt: Bücher, Blumen, Kerzenlicht,
+Fantasie und Gemeinschaft statt Büro- oder Produktivitätsmotiven. Die zwölf
+getrennten Serienmotive liegen unter `assets/images/seitenfunkeln-serie/`; das
+KREAMIX-Motiv bleibt wegen der abweichenden Kursbezeichnung unveröffentlicht.

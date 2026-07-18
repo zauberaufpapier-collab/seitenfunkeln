@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://seitenfunkeln.zauberaufpapier.workers.dev/sitemap.xml
