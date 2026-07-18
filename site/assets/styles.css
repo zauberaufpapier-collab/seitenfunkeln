@@ -739,6 +739,55 @@ h3 {
   box-shadow: 0 28px 60px rgba(30, 0, 15, 0.34);
 }
 
+.book-proof-section {
+  padding: 96px max(48px, calc((100vw - var(--content)) / 2));
+  background: #fffafb;
+}
+
+.book-proof-inner {
+  width: min(100%, var(--content));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.6fr);
+  align-items: center;
+  gap: clamp(42px, 6vw, 82px);
+}
+
+.book-proof-figure {
+  margin: 0;
+}
+
+.book-proof-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 24px 58px rgba(75, 12, 46, 0.16);
+}
+
+.book-proof-figure figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.book-proof-copy {
+  max-width: 520px;
+}
+
+.book-proof-copy h2 {
+  margin-bottom: 24px;
+}
+
+.book-proof-copy p {
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+.book-proof-copy .button {
+  margin-top: 12px;
+}
+
 .course-band {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2169,6 +2218,7 @@ code {
   .verdict,
   .course-gifts,
   .fit-section,
+  .book-proof-inner,
   .home-freebie-band,
   .freebie-hero-inner,
   .freebie-sample,
@@ -2297,6 +2347,18 @@ code {
   .home-freebie-band > img {
     width: min(100%, 330px);
     max-height: none;
+  }
+
+  .book-proof-section {
+    padding: 60px 16px;
+  }
+
+  .book-proof-inner {
+    gap: 34px;
+  }
+
+  .book-proof-copy h2 {
+    font-size: 31px;
   }
 
   .freebie-hero {

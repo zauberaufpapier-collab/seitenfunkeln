@@ -67,12 +67,12 @@ function pageShell({ title, description, current, content, image = "assets/image
     + '<meta name="theme-color" content="#791844"><meta property="og:type" content="' + type + '">'
     + '<meta property="og:title" content="' + esc(fullTitle) + '"><meta property="og:description" content="' + esc(description) + '">'
     + '<meta property="og:image" content="' + image + '"><meta name="twitter:card" content="summary_large_image">'
-    + '<link rel="stylesheet" href="assets/styles.css?v=5">' + schema + '</head>'
+    + '<link rel="stylesheet" href="assets/styles.css?v=6">' + schema + '</head>'
     + '<body><a class="skip-link" href="#inhalt">Zum Inhalt springen</a>'
     + '<div class="disclosure-bar">Seitenfunkeln ist ein unabhängiger Empfehlungsblog. Werbliche Inhalte und Affiliate-Links sind als Anzeige gekennzeichnet.</div>'
     + header(current) + '<main id="inhalt">' + content + '</main>' + footer()
     + '<div class="toast" role="status" aria-live="polite" data-toast></div>'
-    + '<script src="assets/site.js?v=5" defer></script></body></html>';
+    + '<script src="assets/site.js?v=6" defer></script></body></html>';
 }
 
 function articleCard(article, featured = false) {
@@ -137,6 +137,11 @@ function homePage() {
     + '<p>Das kostenlose Seitenfunkeln-Starterpaket hilft dir, deine Gedanken zu sortieren, eine Idee zu prüfen und einen kleinen 30-Tage-Weg zu beginnen.</p>'
     + '<a class="button button-gold" href="ressourcen.html">Starterpaket entdecken ' + arrow + '</a><small>16 Seiten · PDF · kein Newsletter</small></div>'
     + '<img src="assets/images/seitenfunkeln-starterpaket-cover.webp" alt="Cover des kostenlosen Seitenfunkeln-Starterpakets" loading="lazy"></section>'
+    + '<section class="book-proof-section"><div class="book-proof-inner"><figure class="book-proof-figure"><img src="assets/images/meine-buchprojekte-tisch-v1.webp" alt="Acht eigene Buchprojekte von Nicole Feller liebevoll auf einem Holztisch angeordnet" loading="lazy"><figcaption>Eine Auswahl meiner eigenen Buchprojekte.</figcaption></figure>'
+    + '<div class="book-proof-copy"><span class="eyebrow">Meine eigenen Buchprojekte</span><h2>Aus meinen Ideen wurden echte Bücher.</h2>'
+    + '<p>Was du hier siehst, habe ich selbst erschaffen und umgesetzt. Am Anfang standen viele Gedanken, Bilder und der Wunsch, daraus etwas Eigenes entstehen zu lassen.</p>'
+    + '<p>Kapitel 2 hat mir dabei geholfen, Zusammenhänge besser zu verstehen, meinen Weg klarer zu sehen und aus Ideen wirkliche Buchprojekte zu machen. Genau deshalb teile ich meine Erfahrung heute mit dir.</p>'
+    + courseLink("Wie Kapitel 2 mir geholfen hat", "button button-secondary") + '</div></div></section>'
     + '<section class="section journey-section"><div class="section-heading"><span class="eyebrow">Dein Weg darf sich gut anfühlen</span><h2>Mit Freude lernen, gestalten und den eigenen Traum wachsen lassen.</h2></div><div class="journey-visuals">' + journeyVisuals + '</div></section>'
     + '<section class="course-band course-band-warm"><div class="course-image course-image-collage"><img src="assets/images/seitenfunkeln-serie/10-community-retusche.webp" alt="Drei liebevoll gestaltete Bücher werden gemeinsam hochgehalten" loading="lazy"></div>'
     + '<div class="course-copy"><span class="eyebrow">Anzeige · meine persönliche Empfehlung</span><h2>Warum ich Kapitel 2 von Herzen weiterempfehle.</h2>'
